@@ -32,7 +32,9 @@ BASE_APPS = [
     'django.contrib.staticfiles',
 ]
 
-LOCAL_APPS = []
+LOCAL_APPS = [
+    "apps.advocates",
+]
 
 THIRD_PARTY_APPS = [
     'rest_framework',
