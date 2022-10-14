@@ -1,5 +1,6 @@
-from pathlib import Path
 import os
+from pathlib import Path
+
 import environ
 
 env = environ.Env()
@@ -33,7 +34,8 @@ BASE_APPS = [
 ]
 
 LOCAL_APPS = [
-    "apps.advocates",
+    'apps.advocates',
+    'apps.companies'
 ]
 
 THIRD_PARTY_APPS = [
