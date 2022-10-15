@@ -9,7 +9,7 @@ class Advocate(models.Model):
     short_bio = models.CharField(max_length=100)
     long_bio = models.TextField()
     years_of_experience = models.IntegerField()
-    company = models.ForeignKey('companies.Company', related_name='advocates', on_delete=models.CASCADE, null=True)
+    company = models.ForeignKey(Company, related_name='advocates', on_delete=models.CASCADE, null=True, blank=True)
     links = models.JSONField(default=dict, blank=True, null=True)
 
     def __str__(self):
