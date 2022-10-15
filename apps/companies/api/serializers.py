@@ -1,11 +1,11 @@
 from apps.advocates.api.serializers import AdvocateSerializer
+from apps.advocates.models import Advocate
 from apps.companies.models import Company
 from rest_framework import serializers
 
 
 class CompanySerializer(serializers.ModelSerializer):
-    # advocates = AdvocateSerializer(many=True)
-    
+        
     class Meta:
         model = Company
         fields = ['id', 'name', 'href', 'summary', 'advocates']
@@ -13,3 +13,4 @@ class CompanySerializer(serializers.ModelSerializer):
             'href': {'read_only': True}
         }
         depth = 1
+    
