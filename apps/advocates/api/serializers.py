@@ -1,12 +1,17 @@
 from apps.advocates.models import Advocate
 from apps.companies.models import Company
+from apps.links.api.serializers import LinkSerializer
 from rest_framework import serializers
 
 
 class AdvocateSerializer(serializers.ModelSerializer):
-    company = serializers.PrimaryKeyRelatedField(queryset=Company.objects.all())
+    links = LinkSerializer(many=True, read_only=True)
+    companies = serializers.PrimaryKeyRelatedField(queryset=Company.objects.all(), many=True)
 
     class Meta:
         model = Advocate
-        fields = ['id', 'name', 'short_bio', 'long_bio', 'years_of_experience', 'links', 'company']
+        fields = ['id', 'profile_pic', 'username', 'name', 'short_bio', 'long_bio', 'companies', 'links', 'follower_count']
         depth = 1
+
+    
+
