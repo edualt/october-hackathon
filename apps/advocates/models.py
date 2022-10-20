@@ -1,16 +1,19 @@
 from django.db import models
 
-from apps.companies.models import Company
 
+def upload_to(instance, filename):
+    return 'advocates/{filename}'.format(filename=filename)
 
 class Advocate(models.Model):
+    profile_pic = models.ImageField(upload_to=upload_to, blank=True, null=True)
+    username = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
-    # profile_pic = models.ImageField(upload_to='advocates/')
-    short_bio = models.CharField(max_length=100)
+    short_bio = models.CharField(max_length=50)
     long_bio = models.TextField()
-    years_of_experience = models.IntegerField()
-    company = models.ForeignKey(Company, related_name='advocates', on_delete=models.CASCADE, null=True, blank=True)
-    links = models.JSONField(default=dict, blank=True, null=True)
+    follower_count = models.IntegerField() 
+
+    class Meta:
+        ordering = ['id']
 
     def __str__(self):
         return self.name
