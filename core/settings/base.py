@@ -35,11 +35,14 @@ BASE_APPS = [
 
 LOCAL_APPS = [
     'apps.advocates',
-    'apps.companies'
+    'apps.companies',
+    'apps.links',
+    'apps.core'
 ]
 
 THIRD_PARTY_APPS = [
     'rest_framework',
+    'corsheaders',
 ]
 
 INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_PARTY_APPS
@@ -52,7 +55,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'DEFAULT_PAGINATION_CLASS': 'core.pagination.CustomPagination',
+    'PAGE_SIZE': 10
+}
 
 ROOT_URLCONF = 'core.urls'
 
