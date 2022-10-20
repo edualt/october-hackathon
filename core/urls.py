@@ -1,9 +1,12 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
-from rest_framework import routers
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/advocates/', include('apps.advocates.api.routers')),
-    path('api/companies/', include('apps.companies.api.routers')),
-]
+    path('advocates/', include('apps.advocates.api.routers')),
+    path('companies/', include('apps.companies.api.routers')),
+    path('links/', include('apps.links.api.routers'))
+    
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
