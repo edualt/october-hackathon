@@ -3,7 +3,6 @@ from os import environ
 
 from apps.companies.api.serializers import CompanySerializer
 from apps.companies.models import Company
-from core.settings.production import URL_HOST
 from rest_framework.viewsets import ModelViewSet
 
 env = environ.Env()
