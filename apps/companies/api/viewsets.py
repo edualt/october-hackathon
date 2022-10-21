@@ -1,6 +1,7 @@
 
 from os import environ
 
+import environ
 from apps.companies.api.serializers import CompanySerializer
 from apps.companies.models import Company
 from rest_framework.viewsets import ModelViewSet
