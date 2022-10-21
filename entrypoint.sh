@@ -10,4 +10,4 @@ python manage.py migrate --settings=core.settings.${enviroment}
 
 # Start server
 echo "Starting server"
-python manage.py runserver 0.0.0.0:8000 --settings=core.settings.${enviroment}
+python manage.py runserver 0.0.0.0:${PORT} --settings=core.settings.${enviroment}
