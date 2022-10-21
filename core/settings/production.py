@@ -10,6 +10,7 @@ ALLOWED_HOSTS = [
 
 CORS_ALLOWED_ORIGINS = [
     'http://*',
+    'https://october-hackathon-edualt.up.railway.app/'
 ]
 
 # Database
