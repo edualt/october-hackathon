@@ -18,6 +18,6 @@ class CompanyViewSet(ModelViewSet):
         if serializer.is_valid():
             serializer.save()
             company = serializer.instance
-            company.href = env.str('URL_HOST') + str(company.id)
+            company.href = env.str('URL_HOST') + 'companies/' + str(company.id)
             company.save()
             return company
