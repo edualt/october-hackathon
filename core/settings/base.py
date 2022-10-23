@@ -43,6 +43,8 @@ LOCAL_APPS = [
 THIRD_PARTY_APPS = [
     'rest_framework',
     'corsheaders',
+    'cloudinary',
+    'cloudinary_storage'
 ]
 
 INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_PARTY_APPS
