@@ -15,13 +15,13 @@
 You can provide an username through the url to get an object
 
 ```url
-../advocates/1
+../advocates/edualt
 ```
 
 Also you can provide url params, filtering by username
 
 ```url
-../advocates/?username=edualt
+../advocates/?query=edualt
 ```
 
 ### POST
