@@ -12,7 +12,7 @@ class AdvocateViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         queryset = Advocate.objects.all()
-        username = self.request.query_params.get('username')
+        username = self.request.query_params.get('query')
         if username is not None:
             queryset = queryset.filter(username=username)
         return queryset
