@@ -5,7 +5,6 @@ DEBUG = env.bool('DEBUG', default=False)
 
 ALLOWED_HOSTS = [
     '*',
-    'https://october-hackathon-edualt.up.railway.app/'
     ]
 
 CORS_ALLOWED_ORIGINS = [
