@@ -39,9 +39,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
-
 STATIC_URL = 'static/'
 
 # Media files
