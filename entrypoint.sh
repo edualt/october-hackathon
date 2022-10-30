@@ -11,4 +11,4 @@ python manage.py migrate --run-syncdb --settings=core.settings.${environment}
 
 # Start server
 echo "Starting server"
-gunicorn --env DJANGO_SETTINGS_MODULE=core.settings.${environment} core.wsgi:application --bind
+gunicorn --env DJANGO_SETTINGS_MODULE=core.settings.${environment} core.wsgi:application --bind 127.0.0.1:8000
