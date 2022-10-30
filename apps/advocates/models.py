@@ -10,8 +10,8 @@ class Advocate(models.Model):
     profile_pic = models.ImageField(upload_to=upload_to, blank=True, null=True)
     username = models.CharField(max_length=100, unique=True)
     name = models.CharField(max_length=100)
-    short_bio = models.CharField(max_length=50)
-    long_bio = models.TextField()
+    short_bio = models.CharField(max_length=50, null=True, blank=True)
+    long_bio = models.TextField(null=True, blank=True)
 
     class Meta:
         ordering = ['id']
