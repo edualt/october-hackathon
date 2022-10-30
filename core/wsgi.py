@@ -9,8 +9,13 @@ https://docs.djangoproject.com/en/4.1/howto/deployment/wsgi/
 
 import os
 
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
+
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings.local.py')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings.'  + env.str('environment', 'local') + '.py')
 
 application = get_wsgi_application()
