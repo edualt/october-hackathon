@@ -12,7 +12,7 @@
 
 ### GET
 
-You can provide an id through the url to get an object
+You can provide an username through the url to get an object
 
 ```url
 ../advocates/1
@@ -31,13 +31,12 @@ Send the next values to create an advocate,
 
 ```json
 {
-    "profile_pic": file or null,
+    "profile_pic": null,
     "username": "edualt",
     "name": "Eduardo Altuzar",
     "short_bio": "hi, im edualt",
     "long_bio": "Backend developer",
     "companies": [],
-    "follower_count": 12
 }
 ```
 
@@ -58,7 +57,7 @@ Send the next values to create a company,
 ```json
 {
     "name":"MongoDB",
-    "logo": file or null,
+    "logo": null,
     "summary":"Some text...",
     "advocates":[]
 }
